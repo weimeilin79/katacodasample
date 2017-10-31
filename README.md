@@ -18,7 +18,9 @@ It is assumed that:
 
 The example can be built and run on OpenShift using a single goal:
 
-    mvn fabric8:deploy
+    mvn fabric8:deploy -Dkubernetes.master=https://<OPENSHIFT_URL>:443 -Dkubernetes.namespace=<YOUR_NAMESPACE> -Dkubernetes.auth.token=<YOUR TOKEN> -Dfabric8.mode=openshift -Dkubernetes.trust.certificates=true -Dfabric8.build.strategy=s2i -Dkubernetes.auth.tryServiceAccount=false -Dfabric8.generator.from=registry.access.redhat.com/jboss-fuse-6/fis-java-openshift:2.0-5 -Dfabric8.generator.fromMode=docker -Dkubernetes.auth.tryKubeConfig=false
+    
+
 
 To list all the running pods:
 
